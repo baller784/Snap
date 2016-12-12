@@ -1,0 +1,36 @@
+PODS:
+  - Nimble (5.0.0)
+  - Quick (0.10.0)
+  - Realm (2.0.2):
+    - Realm/Headers (= 2.0.2)
+  - Realm/Headers (2.0.2)
+  - RealmSwift (2.0.2):
+    - Realm (= 2.0.2)
+  - SnapKit (0.40.0.beta4)
+
+DEPENDENCIES:
+  - Nimble
+  - Quick
+  - RealmSwift
+  - SnapKit (from `git@github.com:SnapKit/SnapKit.git`, branch `feature/0.40.0`)
+
+EXTERNAL SOURCES:
+  SnapKit:
+    :branch: feature/0.40.0
+    :git: git@github.com:SnapKit/SnapKit.git
+
+CHECKOUT OPTIONS:
+  SnapKit:
+    :commit: 25bd7dab9e0a2aec5c7867b1fc9135857425ad84
+    :git: git@github.com:SnapKit/SnapKit.git
+
+SPEC CHECKSUMS:
+  Nimble: 56fc9f5020effa2206de22c3dd910f4fb011b92f
+  Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
+  Realm: 0f5a194af0b7e6158b83db41b4ee1a00be7ddf1a
+  RealmSwift: 0eb5070d851cba7c66e841ca756d83609dc78bc8
+  SnapKit: 2eb32fcdca2206e611ef40d2650fe19b7469c91b
+
+PODFILE CHECKSUM: f2896503b6e363e9b718492a1d5819f61d45bf78
+
+COCOAPODS: 1.1.1
