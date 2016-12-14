@@ -37,20 +37,13 @@ class EventViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addEventListAlert))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addEventPressed))
         upcomingEvents = selectedList.events.filter("isCompleted = false")
-//        finishedEvents = realm.objects(EventModel.self).filter("isCompleted = true")
         finishedEvents = selectedList.events.filter("isCompleted = true")
         self.title = selectedList.name
         setupTableView()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        if upcomingEvents.count == 0 && finishedEvents.count == 0 {
-            addEventListAlert()
-        }
-    }
-    
+
     fileprivate func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -61,8 +54,9 @@ class EventViewController: UIViewController {
         }
     }
     
-    @objc func addEventListAlert() {
+    @objc func addEventPressed() {
         let addEventVC = NewEventVC.storyboardInstance(withTitle: "New Event") as! NewEventVC
+        addEventVC.delegate = self
         let eventNavVC = UINavigationController(rootViewController: addEventVC)
         self.present(eventNavVC, animated: true, completion: nil)
     }
@@ -113,9 +107,6 @@ extension EventViewController: UITableViewDataSource {
                 }
 
                 tableView.reloadData()
-//                try! self.realm.write{
-//                    self.realm.delete(listToBeDeleted)
-//                }
             } else {
                 let listToBeDeleted = self.finishedEvents[indexPath.row]
                 try! RealmManager.performRealmWriteTransaction {
@@ -123,11 +114,7 @@ extension EventViewController: UITableViewDataSource {
                         print("cannot delete upcoming event")
                     }
                 }
-                
                 tableView.reloadData()
-//                try! self.realm.write{
-//                    self.realm.delete(listToBeDeleted)
-//                }
             }
         }
         delete.backgroundColor = UIColor.red
@@ -139,7 +126,7 @@ extension EventViewController: UITableViewDataSource {
             } else {
                 eventsToBeUpdated = self.finishedEvents[indexPath.row]
             }
-            
+
             try! self.realm.write {
                 eventsToBeUpdated.isCompleted = true
                 tableView.reloadData()
@@ -175,6 +162,14 @@ extension EventViewController: UITableViewDelegate {
 
 extension EventViewController: NewEventVCDelegate {
     func reloadList(with newEvent: EventModel) {
+        newEvent.listGuid = selectedList.guid
+        try! RealmManager.performRealmWriteTransaction {
+            if !RealmEvent.save(newEvent) {
+                print("cannot save new event")
+            } else {
+                print("success")
+            }
+        }
         tableView.reloadData()
     }
 }

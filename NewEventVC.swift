@@ -16,7 +16,6 @@ protocol NewEventVCDelegate: class {
 }
 
 class NewEventVC: UIViewController {
-//    let realm = try! Realm()
     fileprivate let nameTextField = UITextField()
     fileprivate let dateTextField = UITextField()
     fileprivate let infoTextField = UITextField()
@@ -41,13 +40,7 @@ class NewEventVC: UIViewController {
         addedEvent.guid = UUID().uuidString
         addedEvent.name = nameTextField.text!
         addedEvent.info = infoTextField.text!
-        addedEvent.listGuid = vc!.selectedList.guid//selectedList.guid
 
-        try! RealmManager.performRealmWriteTransaction {
-            if !RealmEvent.save(addedEvent) {
-                print("cannot save new event")
-            }
-        }
         delegate?.reloadList(with: addedEvent)
         dismiss(animated: true, completion: nil)
     }
@@ -72,7 +65,7 @@ extension NewEventVC {
         infoTextField.backgroundColor = UIColor.green
         infoTextField.placeholder = "Write event description"
 
-        sendButton.setTitle("Send to DB", for: .normal)
+        sendButton.setTitle("Add to list", for: .normal)
         sendButton.titleLabel?.textColor = UIColor.white
         sendButton.backgroundColor = UIColor.black
         sendButton.addTarget(self, action: #selector(sendPressed), for: .touchUpInside)

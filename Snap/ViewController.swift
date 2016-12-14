@@ -64,7 +64,8 @@ class ViewController: UIViewController {
             if inputTextField.text!.characters.count > 0 {
                 let newEvent = EventList()
                 newEvent.guid = UUID().uuidString
-                newEvent.name = inputTextField.text!                
+                newEvent.name = inputTextField.text!
+                
                 try! RealmManager.performRealmWriteTransaction {
                     if !RealmModel.save(newEvent) {
                         print("error")
@@ -196,10 +197,6 @@ extension ViewController: UIGestureRecognizerDelegate {
             print(index.row)
             
             let listToBeDeleted = lists[index.row]
-//            try! realm.write{
-//                realm.delete(listToBeDeleted)
-//                tableView.reloadData()
-//            }
             try! RealmManager.performRealmWriteTransaction {
                 if !RealmList.delete(listToBeDeleted) {
                     print("cannot delete upcoming event")
