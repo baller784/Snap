@@ -16,18 +16,53 @@ protocol NewEventVCDelegate: class {
 }
 
 class NewEventVC: UIViewController {
-    fileprivate let nameTextField = UITextField()
-    fileprivate let dateTextField = UITextField()
-    fileprivate let infoTextField = UITextField()
-    fileprivate let sendButton    = UIButton()
+    fileprivate let stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.spacing = 10.0
+        stackView.axis = .vertical
+        stackView.distribution = .equalSpacing
+        stackView.alignment = .center
+        return stackView
+    }()
+
+    fileprivate let nameTextField: UITextField = {
+        let textField = UITextField()
+        textField.borderStyle = .roundedRect
+        textField.backgroundColor = UIColor.red
+        textField.placeholder = "Enter your name here"
+        return textField
+    }()
+    fileprivate let infoTextField: UITextField = {
+        let textField = UITextField()
+        textField.borderStyle = .roundedRect
+        textField.backgroundColor = UIColor.green
+        textField.placeholder = "Write event description"
+        return textField
+    }()
+    fileprivate let datePicker: UIDatePicker = {
+        let picker = UIDatePicker()
+        picker.datePickerMode = .date
+        return picker
+    }()
+    fileprivate let sendButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Add to list", for: .normal)
+        button.titleLabel?.textColor = UIColor.white
+        button.backgroundColor = UIColor.black
+        return button
+    }()
+
+    fileprivate var ymdDateFormatter: DateFormatter! = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy'-'MM'-'dd"
+        return formatter
+    }()
 
     weak var delegate: NewEventVCDelegate?
-    let vc: EventViewController? = EventViewController()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        setupItems()
         layout()
     }
 
@@ -40,6 +75,7 @@ class NewEventVC: UIViewController {
         addedEvent.guid = UUID().uuidString
         addedEvent.name = nameTextField.text!
         addedEvent.info = infoTextField.text!
+        addedEvent.date = datePicker.date
 
         delegate?.reloadList(with: addedEvent)
         dismiss(animated: true, completion: nil)
@@ -50,24 +86,6 @@ class NewEventVC: UIViewController {
 extension NewEventVC {
     func setup() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelPressed))
-    }
-
-    func setupItems() {
-        nameTextField.borderStyle = .roundedRect
-        nameTextField.backgroundColor = UIColor.red
-        nameTextField.placeholder = "Enter your name here"
-
-        dateTextField.borderStyle = .roundedRect
-        dateTextField.backgroundColor = UIColor.orange
-        dateTextField.placeholder = "Choose date"
-
-        infoTextField.borderStyle = .roundedRect
-        infoTextField.backgroundColor = UIColor.green
-        infoTextField.placeholder = "Write event description"
-
-        sendButton.setTitle("Add to list", for: .normal)
-        sendButton.titleLabel?.textColor = UIColor.white
-        sendButton.backgroundColor = UIColor.black
         sendButton.addTarget(self, action: #selector(sendPressed), for: .touchUpInside)
     }
 }
@@ -75,33 +93,30 @@ extension NewEventVC {
 // MARK: - Layout
 extension NewEventVC {
     func layout() {
-        self.view.addSubview(nameTextField)
-        self.view.addSubview(dateTextField)
-        self.view.addSubview(infoTextField)
-        self.view.addSubview(sendButton)
+        view.addSubview(stackView)
+        [nameTextField, infoTextField, datePicker, sendButton].forEach { stackView.addArrangedSubview($0) }
 
-        nameTextField.snp.makeConstraints { make in
-            make.top.equalTo(self.topLayoutGuide.snp.top).offset(80)
-            make.left.equalTo(self.view.snp.left).offset(10)
-            make.right.equalTo(self.view.snp.right).offset(-10)
+        stackView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(80.0)
+            make.width.equalToSuperview()
         }
 
-        dateTextField.snp.makeConstraints { make in
-            make.top.equalTo(nameTextField.snp.bottom).offset(40)
-            make.left.equalTo(self.view.snp.left).offset(10)
-            make.right.equalTo(self.view.snp.right).offset(-10)
+        nameTextField.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(30)
+            make.right.equalToSuperview().offset(-30)
+            make.height.equalTo(40.0)
         }
 
         infoTextField.snp.makeConstraints { make in
-            make.top.equalTo(dateTextField.snp.bottom).offset(40)
-            make.left.equalTo(self.view.snp.left).offset(10)
-            make.right.equalTo(self.view.snp.right).offset(-10)
+            make.left.equalToSuperview().offset(30)
+            make.right.equalToSuperview().offset(-30)
+            make.height.equalTo(40.0)
         }
 
         sendButton.snp.makeConstraints { make in
-            make.top.equalTo(infoTextField.snp.bottom).offset(40)
-            make.left.equalTo(self.view.snp.left).offset(50)
-            make.right.equalTo(self.view.snp.right).offset(-50)
+            make.left.equalToSuperview().offset(50)
+            make.right.equalToSuperview().offset(-50)
+            make.height.equalTo(40.0)
         }
     }
 }

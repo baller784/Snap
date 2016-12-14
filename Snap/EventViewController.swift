@@ -93,6 +93,7 @@ extension EventViewController: UITableViewDataSource {
         
         cell.eventName.text = event.name
         cell.infoLabel.text = event.info
+        cell.dateLabel.text = DateUtils.convertDate(date: event.date)
         return cell
     }
     

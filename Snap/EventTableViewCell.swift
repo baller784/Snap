@@ -10,7 +10,6 @@ import UIKit
 import SnapKit
 
 class EventTableViewCell: UITableViewCell {
-    
     var eventName: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 18.0)
@@ -57,14 +56,5 @@ class EventTableViewCell: UITableViewCell {
             make.centerY.equalTo(eventName.snp.centerYWithinMargins)
         }
     }
-    
-//    func set(event: EventModel) {
-//        eventName.text = event.name
-//        dateLabel.text = DateUtils.convertDate(date: event.date)
-//        infoLabel.text = event.info
-//        eventName.sizeToFit()
-//        dateLabel.sizeToFit()
-//        infoLabel.sizeToFit()
-//    }
 }
 

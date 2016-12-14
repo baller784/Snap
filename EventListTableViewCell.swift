@@ -11,7 +11,6 @@ import UIKit
 import SnapKit
 
 class EventListTableViewCell: DisclosureIndicatorTableViewCell {
- 
     var eventName = UILabel()
     var dateLabel = UILabel()
     var infoLabel = UILabel()
@@ -46,13 +45,4 @@ class EventListTableViewCell: DisclosureIndicatorTableViewCell {
             make.top.equalTo(eventName.snp.bottom).offset(10)
         }
     }
-    
-//    func set(event: EventModel) {
-//        eventName.text = event.name
-//        dateLabel.text = DateUtils.convertDate(date: event.date)
-//        infoLabel.text = event.info
-//        eventName.sizeToFit()
-//        dateLabel.sizeToFit()
-//        infoLabel.sizeToFit()
-//    }
 }

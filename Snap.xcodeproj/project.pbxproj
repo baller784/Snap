@@ -23,7 +23,6 @@
 		9D5F85511DDA5914002468E4 /* EventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F85501DDA5914002468E4 /* EventList.swift */; };
 		9D5F85531DDAF8BA002468E4 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F85521DDAF8BA002468E4 /* EventViewController.swift */; };
 		9D9739D51DDCE98D003B85F8 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9739D41DDCE98D003B85F8 /* EventTableViewCell.swift */; };
-		9DD95FDF1DF4A200008C9EB4 /* smth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD95FDE1DF4A200008C9EB4 /* smth.swift */; };
 		9DF930BC1DF8A7930020F2AF /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF930BB1DF8A7930020F2AF /* RealmManager.swift */; };
 		9DF930BE1DF8C1120020F2AF /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF930BD1DF8C1120020F2AF /* RealmModel.swift */; };
 		9DFF26A71DE5A54500D56886 /* DisclosureIndicatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFF26A61DE5A54500D56886 /* DisclosureIndicatorTableViewCell.swift */; };
@@ -65,7 +64,6 @@
 		9D5F85501DDA5914002468E4 /* EventList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventList.swift; path = ../EventList.swift; sourceTree = "<group>"; };
 		9D5F85521DDAF8BA002468E4 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventViewController.swift; path = ../EventViewController.swift; sourceTree = "<group>"; };
 		9D9739D41DDCE98D003B85F8 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventTableViewCell.swift; path = ../EventTableViewCell.swift; sourceTree = "<group>"; };
-		9DD95FDE1DF4A200008C9EB4 /* smth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = smth.swift; sourceTree = "<group>"; };
 		9DF930BB1DF8A7930020F2AF /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		9DF930BD1DF8C1120020F2AF /* RealmModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		9DFF26A61DE5A54500D56886 /* DisclosureIndicatorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisclosureIndicatorTableViewCell.swift; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 				9DFF26A01DE5A3FB00D56886 /* Views */,
 				9DFF26A21DE5A46B00D56886 /* Cells */,
 				9DFF26A51DE5A50000D56886 /* View Controllers */,
-				9DD95FDE1DF4A200008C9EB4 /* smth.swift */,
 			);
 			path = Snap;
 			sourceTree = "<group>";
@@ -443,7 +440,6 @@
 				9D5F854D1DDA53EF002468E4 /* AppearanceHelpers.swift in Sources */,
 				22C4D1851DAE1D8900C51662 /* DateUtils.swift in Sources */,
 				9DFF26AB1DE620ED00D56886 /* StoryboardExtensions.swift in Sources */,
-				9DD95FDF1DF4A200008C9EB4 /* smth.swift in Sources */,
 				9DFF26A91DE620BA00D56886 /* ViewControllerExtensions.swift in Sources */,
 				22C4D1771DAD155E00C51662 /* NewEventVC.swift in Sources */,
 				9D5F85531DDAF8BA002468E4 /* EventViewController.swift in Sources */,

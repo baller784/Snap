@@ -28,4 +28,3 @@ class AppearanceHelpers {
         tabBarItemAppearance.setTitleTextAttributes(selectedTabBarAttributes, for: .selected)
     }
 }
-
