@@ -15,6 +15,7 @@ class EventList: Object {
     dynamic var guid: String = ""
     dynamic var name = ""
     dynamic var date = Date()
+    dynamic var userGuid: String = ""
 
     override static func primaryKey() -> String? {
         return #keyPath(EventList.guid)

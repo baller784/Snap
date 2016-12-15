@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 import Realm
 import RealmSwift
+import Firebase
 
 class ViewController: UIViewController {
     fileprivate let tableView: UITableView = {
@@ -26,20 +27,25 @@ class ViewController: UIViewController {
         return view
     }()
     
-    let botomViewLabel: UILabel = {
-        let label = UILabel()
-        label.text = "To Do List"
-        label.font = .systemFont(ofSize: 14.0)
-        label.textColor = UIColor.white
-        return label
+    let logoutButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Log Out", for: .normal)
+        button.setTitleColor(.red, for: .normal)
+        return button
     }()
+
     let now = Date(timeIntervalSinceNow: 0)
     var currentCreateAction: UIAlertAction!
+
+    var user: FIRUser!
+    var ref: FIRDatabaseReference!
 
     var lists: Results<EventList>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.user = FIRAuth.auth()?.currentUser
+        self.ref = FIRDatabase.database().reference()
         lists = RealmList.objects
         setup()
         setupTableView()
@@ -62,12 +68,13 @@ class ViewController: UIViewController {
             let inputTextField = alertController.textFields![0] as UITextField
             
             if inputTextField.text!.characters.count > 0 {
-                let newEvent = EventList()
-                newEvent.guid = UUID().uuidString
-                newEvent.name = inputTextField.text!
-                
+                let newList = EventList()
+                newList.guid = UUID().uuidString
+                newList.name = inputTextField.text!
+                newList.userGuid = self.ref.child("users").child(self.user.uid).key
+
                 try! RealmManager.performRealmWriteTransaction {
-                    if !RealmModel.save(newEvent) {
+                    if !RealmModel.save(newList) {
                         print("error")
                     }
                 }
@@ -103,8 +110,23 @@ class ViewController: UIViewController {
         let vc = storyboard.instantiateViewController(withIdentifier: "NewEventVC") as? NewEventVC
         self.navigationController?.pushViewController(vc!, animated: true)
     }
-}
 
+    @objc fileprivate func logoutPressed() {
+        let message = "What? Are you leaving us?"
+        let controller = UIAlertController(title: nil, message: message, preferredStyle: .actionSheet)
+        let logOutAction = UIAlertAction(title: "Log Out", style: .destructive, handler: { _ in
+            self.dismiss(animated: true, completion: nil)
+//            User.current!.logOut()
+            AppDelegate.main.switchToSignInScreen()
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+            self.dismiss(animated: true, completion: nil)
+        })
+        [logOutAction, cancelAction].forEach { controller.addAction($0) }
+
+        self.present(controller, animated: true, completion: nil)
+    }
+}
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -147,7 +169,7 @@ extension ViewController {
             make.height.equalTo(60)
         }
         
-        botomViewLabel.snp.makeConstraints { make in
+        logoutButton.snp.makeConstraints { make in
             make.center.equalTo(bottomView.center)
         }
         
@@ -165,7 +187,8 @@ extension ViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addEventListAlert))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editListPressed))
         view.addSubview(bottomView)
-        bottomView.addSubview(botomViewLabel)
+        bottomView.addSubview(logoutButton)
+        logoutButton.addTarget(self, action: #selector(logoutPressed), for: .touchUpInside)
     }
     
     fileprivate func setupTableView() {

@@ -9,10 +9,46 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="mOJ-Zb-6Bi">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="eCF-Io-X2b" customClass="LoginViewController" customModule="Snap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zab-gc-evz"/>
+                        <viewControllerLayoutGuide type="bottom" id="brW-fP-Y35"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="d4n-TF-m1Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VpT-Q2-cOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-777" y="62"/>
+        </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="zik-OH-2op">
+            <objects>
+                <viewController storyboardIdentifier="SignUpViewController" id="nHU-Pw-J39" customClass="SignUpViewController" customModule="Snap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="k3n-Wh-Df3"/>
+                        <viewControllerLayoutGuide type="bottom" id="grA-bs-dBn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MVR-El-zxT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4oI-LE-0SS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-63" y="62"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Snap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Snap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -80,7 +116,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z6f-OP-AFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-263.19999999999999" y="-644.52773613193403"/>
+            <point key="canvasLocation" x="-263" y="-857"/>
         </scene>
     </scenes>
 </document>
