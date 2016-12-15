@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>GTMSessionFetcher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>GoogleToolboxForMac.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Nimble.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,22 +57,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>462926D6BE9FC4B2204F00FE55C8B7E6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4AD87D72290AE1FA883D01AE3502BCFB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5957FAE8A700DF86F6318D13BEFB22FA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6A8AE8F22D41E41FDD9EC4D0A1189AA4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7036CCEF8F9828537811E66E1539333E</key>
+		<key>6FBB9428061A27612854F919B46E5C5C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,7 +82,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EB1CF73935D55D50128AAF78FBBCFB18</key>
+		<key>8D164A4F2674B35AA13B831CC5517DC7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F7BDA77295409856D97F89AD6725976D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
