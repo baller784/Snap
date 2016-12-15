@@ -10,11 +10,6 @@ import UIKit
 import Realm
 import RealmSwift
 
-enum AlertType {
-    case create
-    case addDate
-}
-
 class EventViewController: UIViewController {
     let realm = try! Realm()
     fileprivate var tableView: UITableView = {
@@ -28,13 +23,9 @@ class EventViewController: UIViewController {
     var selectedList: EventList!
     var upcomingEvents: Results<EventModel>!
     var finishedEvents: Results<EventModel>!
-    var createAction: UIAlertAction!
-    
+
     var event: EventModel!
-    var alertType: AlertType!
-    
-    var isEditingMode = false
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addEventPressed))
@@ -60,6 +51,7 @@ class EventViewController: UIViewController {
         let eventNavVC = UINavigationController(rootViewController: addEventVC)
         self.present(eventNavVC, animated: true, completion: nil)
     }
+
 }
 
 // MARK: - TableViewDataSource

@@ -11,6 +11,7 @@ import SnapKit
 import Realm
 import RealmSwift
 import Firebase
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,8 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        FIRApp.configure()
         window = UIWindow(frame: UIScreen.main.bounds)
+        FIRApp.configure()
+        setupNotifications()
         setupRootViewController()
         setupAppearance()
         window?.makeKeyAndVisible()
@@ -51,5 +53,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             switchToSignInScreen()
         }
+    }
+
+    func setupNotifications() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { granted, error in
+            // handle error
+        })
     }
 }

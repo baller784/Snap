@@ -17,6 +17,7 @@ final class User: Object {
     dynamic var id: Int = 0
     dynamic var email: String = ""
     dynamic var name: String = ""
+    dynamic var password: String = ""
 
     func logOut() {
         try? RealmManager.performRealmWriteTransaction {

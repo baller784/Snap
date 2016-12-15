@@ -69,9 +69,9 @@
 		9D5F85501DDA5914002468E4 /* EventList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventList.swift; path = ../EventList.swift; sourceTree = "<group>"; };
 		9D5F85521DDAF8BA002468E4 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventViewController.swift; path = ../EventViewController.swift; sourceTree = "<group>"; };
 		9D9739D41DDCE98D003B85F8 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventTableViewCell.swift; path = ../EventTableViewCell.swift; sourceTree = "<group>"; };
-		9DBC0FBC1E028ACC00E5E7B3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9DBC0FBC1E028ACC00E5E7B3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "Snap/View Controllers/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
 		9DBC0FC41E02979100E5E7B3 /* ApplicationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationExtension.swift; sourceTree = "<group>"; };
-		9DBC0FC61E029F6D00E5E7B3 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		9DBC0FC61E029F6D00E5E7B3 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = ../SignUpViewController.swift; sourceTree = "<group>"; };
 		9DBC0FC91E02AC9C00E5E7B3 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9DF2AD881E018FC100B6E80A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9DF930BB1DF8A7930020F2AF /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
@@ -167,6 +167,8 @@
 		9DBC0FC81E029F9E00E5E7B3 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				9DBC0FBC1E028ACC00E5E7B3 /* LoginViewController.swift */,
+				9DBC0FC61E029F6D00E5E7B3 /* SignUpViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -238,8 +240,6 @@
 			isa = PBXGroup;
 			children = (
 				9DBC0FC81E029F9E00E5E7B3 /* Login */,
-				9DBC0FBC1E028ACC00E5E7B3 /* LoginViewController.swift */,
-				9DBC0FC61E029F6D00E5E7B3 /* SignUpViewController.swift */,
 				22E10F9B1DAC38A40063CB6E /* ViewController.swift */,
 				9D5F85521DDAF8BA002468E4 /* EventViewController.swift */,
 				22C4D1761DAD155E00C51662 /* NewEventVC.swift */,
@@ -308,6 +308,7 @@
 					};
 					22E10F951DAC38A40063CB6E = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = RYJW9QP7HH;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -636,6 +637,7 @@
 			baseConfigurationReference = 1BFA44610D8E75070582142A /* Pods-Snap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RYJW9QP7HH;
 				INFOPLIST_FILE = Snap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.danmarc.Snap;
@@ -649,6 +651,7 @@
 			baseConfigurationReference = 9274322D1EE2C608B93994A8 /* Pods-Snap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RYJW9QP7HH;
 				INFOPLIST_FILE = Snap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.danmarc.Snap;

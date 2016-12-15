@@ -116,7 +116,6 @@ class ViewController: UIViewController {
         let controller = UIAlertController(title: nil, message: message, preferredStyle: .actionSheet)
         let logOutAction = UIAlertAction(title: "Log Out", style: .destructive, handler: { _ in
             self.dismiss(animated: true, completion: nil)
-//            User.current!.logOut()
             AppDelegate.main.switchToSignInScreen()
         })
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in

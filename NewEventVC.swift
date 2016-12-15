@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 import Realm
 import RealmSwift
+import UserNotifications
 
 protocol NewEventVCDelegate: class {
     func reloadList(with newEvent: EventModel)
@@ -78,7 +79,23 @@ class NewEventVC: UIViewController {
         addedEvent.date = datePicker.date
 
         delegate?.reloadList(with: addedEvent)
+        self.scheduleNotification(with: addedEvent.name, description: addedEvent.info)
         dismiss(animated: true, completion: nil)
+    }
+
+    fileprivate func scheduleNotification(with eventTitle: String, description: String) {
+        let content = UNMutableNotificationContent()
+        content.title = "Snap"
+        content.subtitle = "\(eventTitle) has been added by you 😜"
+        content.body = description
+        content.badge = 1
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let requestidentifier = "snapRequest"
+        let request = UNNotificationRequest(identifier: requestidentifier, content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
+            print("\(error?.localizedDescription)")
+        })
     }
 }
 
