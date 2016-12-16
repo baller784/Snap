@@ -67,6 +67,16 @@ class NewEventVC: UIViewController {
         layout()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UNUserNotificationCenter.current().delegate = self
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
+
     @objc fileprivate func cancelPressed() {
         dismiss(animated: true, completion: nil)
     }
@@ -79,23 +89,14 @@ class NewEventVC: UIViewController {
         addedEvent.date = datePicker.date
 
         delegate?.reloadList(with: addedEvent)
-        self.scheduleNotification(with: addedEvent.name, description: addedEvent.info)
+        NotificationManager.shared.notificationWithTimeInterval(with: addedEvent.name, description: addedEvent.info)
         dismiss(animated: true, completion: nil)
     }
 
-    fileprivate func scheduleNotification(with eventTitle: String, description: String) {
-        let content = UNMutableNotificationContent()
-        content.title = "Snap"
-        content.subtitle = "\(eventTitle) has been added by you 😜"
-        content.body = description
-        content.badge = 1
-
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-        let requestidentifier = "snapRequest"
-        let request = UNNotificationRequest(identifier: requestidentifier, content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
-            print("\(error?.localizedDescription)")
-        })
+    func showAlert(_ message: String) {
+        let alertController = UIAlertController(title: "Snap", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 
@@ -134,6 +135,23 @@ extension NewEventVC {
             make.left.equalToSuperview().offset(50)
             make.right.equalToSuperview().offset(-50)
             make.height.equalTo(40.0)
+        }
+    }
+}
+
+extension NewEventVC: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound])
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        switch response.actionIdentifier {
+        case "firstOption":
+            self.showAlert("You pressed on first option! 🤖")
+        case "secondOption":
+            self.showAlert("You pressed on second option! 🇲🇩")
+        default:
+            break
         }
     }
 }

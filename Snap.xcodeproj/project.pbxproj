@@ -27,6 +27,7 @@
 		9DBC0FC51E02979100E5E7B3 /* ApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBC0FC41E02979100E5E7B3 /* ApplicationExtension.swift */; };
 		9DBC0FC71E029F6D00E5E7B3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBC0FC61E029F6D00E5E7B3 /* SignUpViewController.swift */; };
 		9DBC0FCA1E02AC9C00E5E7B3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBC0FC91E02AC9C00E5E7B3 /* User.swift */; };
+		9DBC0FCC1E02FECA00E5E7B3 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBC0FCB1E02FECA00E5E7B3 /* NotificationManager.swift */; };
 		9DF2AD891E018FC100B6E80A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DF2AD881E018FC100B6E80A /* GoogleService-Info.plist */; };
 		9DF930BC1DF8A7930020F2AF /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF930BB1DF8A7930020F2AF /* RealmManager.swift */; };
 		9DF930BE1DF8C1120020F2AF /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF930BD1DF8C1120020F2AF /* RealmModel.swift */; };
@@ -73,6 +74,7 @@
 		9DBC0FC41E02979100E5E7B3 /* ApplicationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationExtension.swift; sourceTree = "<group>"; };
 		9DBC0FC61E029F6D00E5E7B3 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = ../SignUpViewController.swift; sourceTree = "<group>"; };
 		9DBC0FC91E02AC9C00E5E7B3 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9DBC0FCB1E02FECA00E5E7B3 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		9DF2AD881E018FC100B6E80A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9DF930BB1DF8A7930020F2AF /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		9DF930BD1DF8C1120020F2AF /* RealmModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				9DFF26A81DE620BA00D56886 /* ViewControllerExtensions.swift */,
 				9DFF26AA1DE620ED00D56886 /* StoryboardExtensions.swift */,
 				9DBC0FC41E02979100E5E7B3 /* ApplicationExtension.swift */,
+				9DBC0FCB1E02FECA00E5E7B3 /* NotificationManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 			files = (
 				9D5F85511DDA5914002468E4 /* EventList.swift in Sources */,
 				22E10F9C1DAC38A40063CB6E /* ViewController.swift in Sources */,
+				9DBC0FCC1E02FECA00E5E7B3 /* NotificationManager.swift in Sources */,
 				9DF930BC1DF8A7930020F2AF /* RealmManager.swift in Sources */,
 				9D5F854D1DDA53EF002468E4 /* AppearanceHelpers.swift in Sources */,
 				22C4D1851DAE1D8900C51662 /* DateUtils.swift in Sources */,
