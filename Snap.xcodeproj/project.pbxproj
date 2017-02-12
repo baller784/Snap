@@ -28,6 +28,21 @@
 		9DBC0FC71E029F6D00E5E7B3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBC0FC61E029F6D00E5E7B3 /* SignUpViewController.swift */; };
 		9DBC0FCA1E02AC9C00E5E7B3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBC0FC91E02AC9C00E5E7B3 /* User.swift */; };
 		9DBC0FCC1E02FECA00E5E7B3 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBC0FCB1E02FECA00E5E7B3 /* NotificationManager.swift */; };
+		9DBC0FDE1E03F74F00E5E7B3 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9DBC0FCE1E03F74F00E5E7B3 /* 1.jpg */; };
+		9DBC0FDF1E03F74F00E5E7B3 /* 1563936-michael_jordan_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9DBC0FCF1E03F74F00E5E7B3 /* 1563936-michael_jordan_2.jpg */; };
+		9DBC0FE01E03F74F00E5E7B3 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9DBC0FD01E03F74F00E5E7B3 /* 2.jpg */; };
+		9DBC0FE11E03F74F00E5E7B3 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9DBC0FD11E03F74F00E5E7B3 /* 3.jpg */; };
+		9DBC0FE21E03F74F00E5E7B3 /* 43ebe1eaf1b6822db327ae878134bf61.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9DBC0FD21E03F74F00E5E7B3 /* 43ebe1eaf1b6822db327ae878134bf61.jpg */; };
+		9DBC0FE31E03F74F00E5E7B3 /* bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9DBC0FD31E03F74F00E5E7B3 /* bg@2x.jpg */; };
+		9DBC0FE41E03F74F00E5E7B3 /* blake_griffin.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DBC0FD41E03F74F00E5E7B3 /* blake_griffin.png */; };
+		9DBC0FE51E03F74F00E5E7B3 /* chevron-left.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DBC0FD51E03F74F00E5E7B3 /* chevron-left.png */; };
+		9DBC0FE61E03F74F00E5E7B3 /* chevron-right.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DBC0FD61E03F74F00E5E7B3 /* chevron-right.png */; };
+		9DBC0FE71E03F74F00E5E7B3 /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9DBC0FD71E03F74F00E5E7B3 /* default.jpg */; };
+		9DBC0FE81E03F74F00E5E7B3 /* Develop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9DBC0FD81E03F74F00E5E7B3 /* Develop.jpg */; };
+		9DBC0FE91E03F74F00E5E7B3 /* lebron-james-basketball-headshot-photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9DBC0FD91E03F74F00E5E7B3 /* lebron-james-basketball-headshot-photo.jpg */; };
+		9DBC0FEA1E03F74F00E5E7B3 /* shop-placeholder-300x300.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DBC0FDB1E03F74F00E5E7B3 /* shop-placeholder-300x300.png */; };
+		9DBC0FEB1E03F74F00E5E7B3 /* timthumb.php.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DBC0FDC1E03F74F00E5E7B3 /* timthumb.php.png */; };
+		9DBC0FEC1E03F74F00E5E7B3 /* Two Tickets Filled-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DBC0FDD1E03F74F00E5E7B3 /* Two Tickets Filled-100.png */; };
 		9DF2AD891E018FC100B6E80A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DF2AD881E018FC100B6E80A /* GoogleService-Info.plist */; };
 		9DF930BC1DF8A7930020F2AF /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF930BB1DF8A7930020F2AF /* RealmManager.swift */; };
 		9DF930BE1DF8C1120020F2AF /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF930BD1DF8C1120020F2AF /* RealmModel.swift */; };
@@ -75,6 +90,21 @@
 		9DBC0FC61E029F6D00E5E7B3 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = ../SignUpViewController.swift; sourceTree = "<group>"; };
 		9DBC0FC91E02AC9C00E5E7B3 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9DBC0FCB1E02FECA00E5E7B3 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		9DBC0FCE1E03F74F00E5E7B3 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		9DBC0FCF1E03F74F00E5E7B3 /* 1563936-michael_jordan_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1563936-michael_jordan_2.jpg"; sourceTree = "<group>"; };
+		9DBC0FD01E03F74F00E5E7B3 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		9DBC0FD11E03F74F00E5E7B3 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		9DBC0FD21E03F74F00E5E7B3 /* 43ebe1eaf1b6822db327ae878134bf61.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 43ebe1eaf1b6822db327ae878134bf61.jpg; sourceTree = "<group>"; };
+		9DBC0FD31E03F74F00E5E7B3 /* bg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg@2x.jpg"; sourceTree = "<group>"; };
+		9DBC0FD41E03F74F00E5E7B3 /* blake_griffin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blake_griffin.png; sourceTree = "<group>"; };
+		9DBC0FD51E03F74F00E5E7B3 /* chevron-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chevron-left.png"; sourceTree = "<group>"; };
+		9DBC0FD61E03F74F00E5E7B3 /* chevron-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chevron-right.png"; sourceTree = "<group>"; };
+		9DBC0FD71E03F74F00E5E7B3 /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
+		9DBC0FD81E03F74F00E5E7B3 /* Develop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Develop.jpg; sourceTree = "<group>"; };
+		9DBC0FD91E03F74F00E5E7B3 /* lebron-james-basketball-headshot-photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "lebron-james-basketball-headshot-photo.jpg"; sourceTree = "<group>"; };
+		9DBC0FDB1E03F74F00E5E7B3 /* shop-placeholder-300x300.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shop-placeholder-300x300.png"; sourceTree = "<group>"; };
+		9DBC0FDC1E03F74F00E5E7B3 /* timthumb.php.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timthumb.php.png; sourceTree = "<group>"; };
+		9DBC0FDD1E03F74F00E5E7B3 /* Two Tickets Filled-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Two Tickets Filled-100.png"; sourceTree = "<group>"; };
 		9DF2AD881E018FC100B6E80A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9DF930BB1DF8A7930020F2AF /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		9DF930BD1DF8C1120020F2AF /* RealmModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
@@ -175,6 +205,37 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		9DBC0FCD1E03F74F00E5E7B3 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				9DBC0FCE1E03F74F00E5E7B3 /* 1.jpg */,
+				9DBC0FCF1E03F74F00E5E7B3 /* 1563936-michael_jordan_2.jpg */,
+				9DBC0FD01E03F74F00E5E7B3 /* 2.jpg */,
+				9DBC0FD11E03F74F00E5E7B3 /* 3.jpg */,
+				9DBC0FD21E03F74F00E5E7B3 /* 43ebe1eaf1b6822db327ae878134bf61.jpg */,
+				9DBC0FD31E03F74F00E5E7B3 /* bg@2x.jpg */,
+				9DBC0FD41E03F74F00E5E7B3 /* blake_griffin.png */,
+				9DBC0FD51E03F74F00E5E7B3 /* chevron-left.png */,
+				9DBC0FD61E03F74F00E5E7B3 /* chevron-right.png */,
+				9DBC0FD71E03F74F00E5E7B3 /* default.jpg */,
+				9DBC0FD81E03F74F00E5E7B3 /* Develop.jpg */,
+				9DBC0FD91E03F74F00E5E7B3 /* lebron-james-basketball-headshot-photo.jpg */,
+				9DBC0FDA1E03F74F00E5E7B3 /* Placeholder */,
+				9DBC0FDD1E03F74F00E5E7B3 /* Two Tickets Filled-100.png */,
+			);
+			name = Images;
+			path = ../Images;
+			sourceTree = "<group>";
+		};
+		9DBC0FDA1E03F74F00E5E7B3 /* Placeholder */ = {
+			isa = PBXGroup;
+			children = (
+				9DBC0FDB1E03F74F00E5E7B3 /* shop-placeholder-300x300.png */,
+				9DBC0FDC1E03F74F00E5E7B3 /* timthumb.php.png */,
+			);
+			path = Placeholder;
+			sourceTree = "<group>";
+		};
 		9DF930BA1DF8A7840020F2AF /* Database */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +289,7 @@
 		9DFF26A41DE5A4C300D56886 /* General Files */ = {
 			isa = PBXGroup;
 			children = (
+				9DBC0FCD1E03F74F00E5E7B3 /* Images */,
 				9DF2AD881E018FC100B6E80A /* GoogleService-Info.plist */,
 				22E10F9D1DAC38A40063CB6E /* Main.storyboard */,
 				22E10FA21DAC38A40063CB6E /* LaunchScreen.storyboard */,
@@ -347,10 +409,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DBC0FE81E03F74F00E5E7B3 /* Develop.jpg in Resources */,
+				9DBC0FE21E03F74F00E5E7B3 /* 43ebe1eaf1b6822db327ae878134bf61.jpg in Resources */,
+				9DBC0FEC1E03F74F00E5E7B3 /* Two Tickets Filled-100.png in Resources */,
+				9DBC0FDF1E03F74F00E5E7B3 /* 1563936-michael_jordan_2.jpg in Resources */,
 				22E10FA41DAC38A40063CB6E /* LaunchScreen.storyboard in Resources */,
+				9DBC0FE01E03F74F00E5E7B3 /* 2.jpg in Resources */,
 				9DF2AD891E018FC100B6E80A /* GoogleService-Info.plist in Resources */,
+				9DBC0FEA1E03F74F00E5E7B3 /* shop-placeholder-300x300.png in Resources */,
 				22E10FA11DAC38A40063CB6E /* Assets.xcassets in Resources */,
+				9DBC0FE41E03F74F00E5E7B3 /* blake_griffin.png in Resources */,
+				9DBC0FEB1E03F74F00E5E7B3 /* timthumb.php.png in Resources */,
 				22E10F9F1DAC38A40063CB6E /* Main.storyboard in Resources */,
+				9DBC0FE51E03F74F00E5E7B3 /* chevron-left.png in Resources */,
+				9DBC0FE71E03F74F00E5E7B3 /* default.jpg in Resources */,
+				9DBC0FDE1E03F74F00E5E7B3 /* 1.jpg in Resources */,
+				9DBC0FE11E03F74F00E5E7B3 /* 3.jpg in Resources */,
+				9DBC0FE31E03F74F00E5E7B3 /* bg@2x.jpg in Resources */,
+				9DBC0FE91E03F74F00E5E7B3 /* lebron-james-basketball-headshot-photo.jpg in Resources */,
+				9DBC0FE61E03F74F00E5E7B3 /* chevron-right.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,20 @@
 import UIKit
 import FirebaseAuth
 
+enum LoginProvider {
+    case facebook
+    case google
+    case email(LoginUser)
+}
+
+struct LoginUser {
+    let email: String
+    let password: String
+    func isValid() -> Bool {
+        return email != "" && password != ""
+    }
+}
+
 class LoginViewController: UIViewController {
     fileprivate let stackView: UIStackView = {
         let stackView = UIStackView()
@@ -46,7 +60,7 @@ class LoginViewController: UIViewController {
     fileprivate let signUpButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .lightGray
-        button.setTitle("Sign Up", for: .normal)
+        button.setTitle("Register", for: .normal)
         button.setTitleColor(.white, for: .normal)
         return button
     }()
@@ -63,6 +77,7 @@ class LoginViewController: UIViewController {
         layout()
     }
 
+
     fileprivate func checkCurrenUser() {
         if let _ = FIRAuth.auth()?.currentUser {
             self.signIn()
@@ -73,7 +88,6 @@ class LoginViewController: UIViewController {
 // MARK: Setup 
 extension LoginViewController {
     fileprivate func setup() {
-//        passwordTextField.delegate = self
         signInButton.addTarget(self, action: #selector(signInPressed), for: .touchUpInside)
         forgotPassword.addTarget(self, action: #selector(passwordReset), for: .touchUpInside)
         signUpButton.addTarget(self, action: #selector(signUpPressed), for: .touchUpInside)

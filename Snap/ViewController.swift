@@ -39,6 +39,7 @@ class ViewController: UIViewController {
 
     var user: FIRUser!
     var ref: FIRDatabaseReference!
+    var notification: NotificationToken?
 
     var lists: Results<EventList>!
     
@@ -49,6 +50,7 @@ class ViewController: UIViewController {
         lists = RealmList.objects
         setup()
         setupTableView()
+        updateUI()
         setupLongPress()
         layout()
     }
@@ -56,6 +58,32 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+    }
+
+    fileprivate func updateUI() {
+        notification = lists.addNotificationBlock {[weak self] (changes: RealmCollectionChange) in
+            guard let tableView = self?.tableView else { return }
+
+            switch changes {
+            case .initial:
+                tableView.reloadData()
+                break
+            case .update(_, let deletions, let insertions, _):
+
+                tableView.beginUpdates()
+
+                tableView.insertRows(at: insertions.map { IndexPath(row: $0, section: 0) },
+                                     with: .automatic)
+                tableView.deleteRows(at: deletions.map { IndexPath(row: $0, section: 0) },
+                                     with: .automatic)
+
+                tableView.endUpdates()
+                break
+            case .error(let error):
+                print(error)
+                break
+            }
+        }
     }
     
     func listNameFieldDidChange(textField: UITextField){
@@ -78,7 +106,6 @@ class ViewController: UIViewController {
                         print("error")
                     }
                 }
-                self.tableView.reloadData()
             }
         }
         
@@ -92,19 +119,7 @@ class ViewController: UIViewController {
     @objc func editListPressed() {
         
     }
-    
-    fileprivate func deleteEvent() {
-        let indexPath = NSIndexPath()
-        let listToBeDeleted = lists[indexPath.row]
 
-        try! RealmManager.performRealmWriteTransaction {
-            if !RealmList.delete(listToBeDeleted) {
-                print("cannot delete selected list")
-            }
-        }
-        tableView.reloadData()
-    }
-    
     func openAddEventVC(sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "NewEventVC") as? NewEventVC
@@ -140,7 +155,7 @@ extension ViewController: UITableViewDataSource {
         let list = lists[indexPath.row]
         
         cell.eventName.text = list.name
-        cell.infoLabel.text = "\(list.events.count) events"
+        cell.infoLabel.text = list.events.count > 1 || list.events.count == 0 ? "\(list.events.count) events" : "\(list.events.count) event"
         return cell
     }
     
@@ -224,8 +239,6 @@ extension ViewController: UIGestureRecognizerDelegate {
                     print("cannot delete upcoming event")
                 }
             }
-            tableView.reloadData()
-
         } else {
             print("Could not find index path")
         }

@@ -32,6 +32,11 @@ class EventListTableViewCell: DisclosureIndicatorTableViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    func set(_ list: EventList) {
+        eventName.text = list.name
+        dateLabel.text = DateUtils.convertDate(date: list.date)
+    }
     
     func layout() {
         eventName.snp.makeConstraints { make in

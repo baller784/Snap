@@ -89,7 +89,7 @@ class NewEventVC: UIViewController {
         addedEvent.date = datePicker.date
 
         delegate?.reloadList(with: addedEvent)
-        NotificationManager.shared.notificationWithTimeInterval(with: addedEvent.name, description: addedEvent.info)
+        NotificationManager.shared.addNotification(addedEvent.name, description: addedEvent.info, type: .image)
         dismiss(animated: true, completion: nil)
     }
 

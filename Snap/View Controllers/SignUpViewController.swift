@@ -39,14 +39,14 @@ class SignUpViewController: UIViewController {
     fileprivate let signUpButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .blue
-        button.setTitle("Sign Up", for: .normal)
+        button.setTitle("Register", for: .normal)
         button.setTitleColor(.white, for: .normal)
         return button
     }()
 
     fileprivate let haveAccountButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Press to Sign In", for: .normal)
+        button.setTitle("Back to Sign In", for: .normal)
         button.setTitleColor(.blue, for: .normal)
         return button
     }()
@@ -61,11 +61,11 @@ class SignUpViewController: UIViewController {
 //MARK: Setup
 extension SignUpViewController {
     func setup() {
-        signUpButton.addTarget(self, action: #selector(signUpPressed), for: .touchUpInside)
+        signUpButton.addTarget(self, action: #selector(registerPressed), for: .touchUpInside)
         haveAccountButton.addTarget(self, action: #selector(backToLoginPressed), for: .touchUpInside)
     }
 
-    @objc fileprivate func signUpPressed() {
+    @objc fileprivate func registerPressed() {
         let email = emailTextField.text
         let password = passwordTextField.text
         FIRAuth.auth()?.createUser(withEmail: email!, password: password!, completion: { (user, error) in
